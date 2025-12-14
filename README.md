@@ -1,46 +1,47 @@
 # xray for Alwaysdata
 
-在 Alwaysdata 虚拟主机上部署 xray 节点
+在 Alwaysdata Deploying an Xray node on a virtual host
 
-## 项目特点
+## Project Features
 
-* 本项目用于在 Alwaysdata 上部署 xray ，采用的方案为 xray + WebSocket + VMess/Vless/Trojan/Shadowsocks + TLS
-* vmess 和 vless 的 uuid 或 trojan 和 shadowsocks 的密码，路径既可以自定义，又或者使用默认值
-* 部署完成如发现不能上网，请检查域名是否被墙，如域名被墙，可使用 Cloudflare CDN 或者 worker 解决。
+* This project deploys xray on Alwaysdata, using the following solution: xray + WebSocket + VMess/Vless/Trojan/Shadowsocks + TLS
+* The path can be customized or uses the default value: the UUID for vmess and vless, or the password for trojan and shadowsocks.
+* If you encounter internet access issues after deployment, please check if the domain name is blocked. If so, you can use Cloudflare CDN or worker libraries to resolve the issue.
 
-## 部署
+## deploy
 
-* 注册 [Alwaysdata](https://www.alwaysdata.com/)
-* 创建一个 Web 项目
-* 进入其的 SSH，输入以下命令，以下载项目文件
+* register [Alwaysdata](https://www.alwaysdata.com/)
+*Create a web project
+* Enter its SSH key and type the following command to download the project files.
 
 ```shell
 wget -N https://github.com/Misaka-blog/xray-for-alwaysdata/raw/main/web.sh && chmod +x web.sh
 ```
 
-* 在网站设置中，按照下图设置启动项并设置环境变量
+* In the website settings, configure the startup items and environment variables as shown in the image below.
 
 ![image](https://user-images.githubusercontent.com/122191366/230263139-b461e5a4-c52a-4afe-b4ce-e36903ed6372.png)
 
-* 项目用到的环境变量
-  | 变量名 | 是否必须 | 默认值 | 备注 |
+* Environment variables used in the project
+  | Variable name | Required | Default value | Remarks|
   | ------------ | ------ | ------ | ------ |
-  | UUID         | 否 | de04add9-5c68-8bab-950c-08cd5320df18 | 可在线生成 https://www.uuidgenerator.net/ |
-  | VMESS_WSPATH | 否 | /vmess | 以 / 开头 |
-  | VLESS_WSPATH | 否 | /vless | 以 / 开头 |
-  | TROJAN_WSPATH | 否 | /trojan | 以 / 开头 |
-  | SS_WSPATH | 否 | /shadowsocks | 以 / 开头 |
-  | NEZHA_SERVER | 否 |        | 哪吒探针服务端的 IP 或域名 |
-  | NEZHA_PORT   | 否 |        | 哪吒探针服务端的端口 |
-  | NEZHA_KEY    | 否 |        | 哪吒探针客户端专用 Key |
+  | UUID         | No | de04add9-5c68-8bab-950c-08cd5320df18 | Can be generated online: https://www.uuidgenerator.net/ |
+  | VMESS_WSPATH | No | /vmess | Starts with /|
+  | VLESS_WSPATH | No | /vless | Starts with / |
+  | TROJAN_WSPATH | No | /trojan | Starts with / |
+  | SS_WSPATH | No | /shadowsocks | Starts with / |
+  | NEZHA_SERVER | No | | IP address or domain name of the Nezha Probe server |
+  | NEZHA_PORT | No | | The port of the Nezha Probe server|
+  | NEZHA_KEY    | No | | Nezha Probe Client Only Key |
 
-## 免责声明
+## Disclaimer
 
-* 本程序仅供学习了解, 非盈利目的，请于下载后 24 小时内删除, 不得用作任何商业用途, 文字、数据及图片均有所属版权, 如转载须注明来源。
-* 使用本程序必循遵守部署免责声明。使用本程序必循遵守部署服务器所在地、所在国家和用户所在国家的法律法规, 程序作者不对使用者任何不当行为负责.
+* This program is for educational purposes only and is not for profit. Please delete it within 24 hours of downloading. It may not be used for any commercial purposes. The text, data, and images are all copyrighted. If you reproduce it, please indicate the source.
+* Use of this program requires adherence to the deployment disclaimer. Users must comply with the laws and regulations of the deployment server's location, its country, and the user's country. The program author is not responsible for any misconduct by the user.
 
-## 赞助
+## sponsor
 
-爱发电：https://afdian.net/a/Misaka-blog
+Love Power：https://afdian.net/a/Misaka-blog
 
 ![afdian-MisakaNo の 小破站](https://user-images.githubusercontent.com/122191366/211533469-351009fb-9ae8-4601-992a-abbf54665b68.jpg)
+
